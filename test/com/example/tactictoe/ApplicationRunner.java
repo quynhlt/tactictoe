@@ -3,6 +3,7 @@ package com.example.tactictoe;
 import junit.framework.Assert;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.jayway.android.robotium.solo.Solo;
 
@@ -51,4 +52,9 @@ public class ApplicationRunner {
 		Assert.assertEquals(key, btnMove.getText().toString());
 	}
 
+	public void dislaysGameOverStatus() {
+		solo.sleep(2000);
+		TextView tvGameOver= (TextView) solo.getView(R.id.tvGameOver);
+		Assert.assertEquals("Game over! X win", tvGameOver.getText().toString());
+	}
 }

@@ -30,9 +30,21 @@ public class MainActivityTest extends
 		applicationRunner.startGame();
 		applicationRunner.startWith("start x");
 		applicationRunner.move(0);
-		applicationRunner.showsAt("X",0);
+		applicationRunner.showsAt(PlayActivity.X, 0);
 		applicationRunner.move(1);
-		applicationRunner.showsAt("O", 1);
+		applicationRunner.showsAt(PlayActivity.O, 1);
 		applicationRunner.stopGame();
 	}
+	
+	public void testGameOverWhenHasAWinner() {
+		applicationRunner.startGame();
+		applicationRunner.move(0);
+		applicationRunner.move(3);
+		applicationRunner.move(2);
+		applicationRunner.move(4);
+		applicationRunner.move(1);
+		applicationRunner.dislaysGameOverStatus();
+		applicationRunner.stopGame();
+	}
+	
 }
