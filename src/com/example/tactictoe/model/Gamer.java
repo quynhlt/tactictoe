@@ -1,4 +1,4 @@
-package com.example.tactictoe;
+package com.example.tactictoe.model;
 
 public class Gamer {
 	private String startUser;

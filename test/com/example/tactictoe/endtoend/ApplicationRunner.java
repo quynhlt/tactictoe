@@ -1,13 +1,11 @@
 package com.example.tactictoe.endtoend;
 
 import junit.framework.Assert;
-import android.webkit.WebView.FindListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.tactictoe.MainActivity;
 import com.example.tactictoe.PlayActivity;
 import com.example.tactictoe.R;
 import com.jayway.android.robotium.solo.Solo;
@@ -83,5 +81,11 @@ public class ApplicationRunner {
 	public void isHistoriesDisplayed() {
 		ListView listHistories = (ListView) solo.getView(R.id.listHistories);
 		Assert.assertTrue(listHistories.getAdapter() != null);
+	}
+
+	public void historiesNotEmpty() {
+		ListView listHistories = (ListView) solo.getView(R.id.listHistories);
+		Assert.assertTrue(listHistories.getAdapter().getCount() > 0);
+		solo.sleep(2000);
 	}
 }

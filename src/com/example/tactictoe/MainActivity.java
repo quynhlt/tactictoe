@@ -20,6 +20,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		context = this;
 		btnStart = (Button) findViewById(R.id.btnStart);
 		btnStart.setOnClickListener(this);
+		findViewById(R.id.btnHistories).setOnClickListener(this);
+		btnStart.setOnClickListener(this);
 	}
 
 	@Override
@@ -28,6 +30,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.btnStart:
 			Intent intent = new Intent(context, PlayActivity.class);
 			startActivity(intent);
+			break;
+		case R.id.btnHistories:
+			Intent intentHistory = new Intent(context, HistoryActivity.class);
+			startActivity(intentHistory);
 			break;
 		default:
 			break;

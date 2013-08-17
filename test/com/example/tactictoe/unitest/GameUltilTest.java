@@ -5,7 +5,7 @@ package com.example.tactictoe.unitest;
 
 import android.test.AndroidTestCase;
 
-import com.example.tactictoe.Gamer;
+import com.example.tactictoe.model.Gamer;
 
 /**
  * @author quynhlt
