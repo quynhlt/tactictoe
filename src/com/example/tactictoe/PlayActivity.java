@@ -1,5 +1,7 @@
 package com.example.tactictoe;
 
+import com.example.tactictoe.unitest.GameUltil;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,12 +17,14 @@ public class PlayActivity extends Activity implements OnClickListener {
 	public static final String O = "O";
 	private String charMove;
 	private int countPlay = 0;
+	private Gamer gamer;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.playscreen);
 		setEvent();
+		gamer = new Gamer();
 		charMove = X;
 	}
 
@@ -60,9 +64,16 @@ public class PlayActivity extends Activity implements OnClickListener {
 		} else {
 			charMove = O;
 		}
+		//put value choi
+		//gamer....//
+		checkGameResult();
+	}
+
+	private int checkGameResult() {
 		if (countPlay == 5) {
 			TextView tvGameOver = (TextView) findViewById(R.id.tvGameOver);
 			tvGameOver.setText("Game over! X win");
 		}
+		return GameUltil.checkResult(gamer);
 	}
 }

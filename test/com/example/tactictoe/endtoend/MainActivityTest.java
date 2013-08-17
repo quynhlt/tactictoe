@@ -1,7 +1,9 @@
-package com.example.tactictoe;
+package com.example.tactictoe.endtoend;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.example.tactictoe.MainActivity;
+import com.example.tactictoe.PlayActivity;
 import com.jayway.android.robotium.solo.Solo;
 
 public class MainActivityTest extends

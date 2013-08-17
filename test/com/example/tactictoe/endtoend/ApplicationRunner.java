@@ -1,10 +1,12 @@
-package com.example.tactictoe;
+package com.example.tactictoe.endtoend;
 
 import junit.framework.Assert;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.tactictoe.PlayActivity;
+import com.example.tactictoe.R;
 import com.jayway.android.robotium.solo.Solo;
 
 public class ApplicationRunner {
