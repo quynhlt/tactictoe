@@ -15,12 +15,12 @@ import android.widget.TextView;
 public class PlayActivity extends Activity implements OnClickListener {
 
 	public static final int[] buttons = { R.id.btn0, R.id.btn1, R.id.btn2,
-			R.id.btn3, R.id.btn4 };
+			R.id.btn3, R.id.btn4, R.id.btn5, R.id.btn6, R.id.btn7, R.id.btn8 };
 	private static final int MAX_MOVE_TO_CHECK = 5;
 	private String charMove;
 	private int countPlay = 0;
 	private Gamer gamer;
-	private int[] moves = new int[5];
+	private int[] moves = new int[9];
 	private EditText edtStart;
 
 	@Override
@@ -30,7 +30,7 @@ public class PlayActivity extends Activity implements OnClickListener {
 		edtStart = (EditText) findViewById(R.id.edtStart);
 		setEvent();
 		gamer = new Gamer();
-		//edtStart.setText(GameUltil.X);
+		// edtStart.setText(GameUltil.X);
 		charMove = GameUltil.X;
 		gamer.setStartUser(charMove);
 	}
@@ -59,6 +59,10 @@ public class PlayActivity extends Activity implements OnClickListener {
 		case R.id.btn2:
 		case R.id.btn3:
 		case R.id.btn4:
+		case R.id.btn5:
+		case R.id.btn6:
+		case R.id.btn7:
+		case R.id.btn8:
 			move(charMove, vId);
 			break;
 		default:
@@ -94,7 +98,7 @@ public class PlayActivity extends Activity implements OnClickListener {
 	private int checkGameResult() {
 		String message = "";
 		int result = GameUltil.DRAW;
-		if (countPlay == MAX_MOVE_TO_CHECK) {
+		if (countPlay >= MAX_MOVE_TO_CHECK) {
 			result = GameUltil.checkResult(gamer);
 			if (result == GameUltil.X_WIN) {
 				message = "Game over! X win";
