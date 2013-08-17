@@ -1,7 +1,7 @@
 package com.example.tactictoe;
 
 public class Gamer {
-	private String[] values;
+	private String startUser;
 	private int[] moves;
 
 	/**
@@ -20,18 +20,19 @@ public class Gamer {
 	}
 
 	/**
-	 * @return the values
+	 * @return the startUser
 	 */
-	public String[] getValues() {
-		return values;
+	public String getStartUser() {
+		return startUser;
 	}
 
 	/**
-	 * @param values
-	 *            the values to set
+	 * @param startUser the startUser to set
 	 */
-	public void setValues(String[] values) {
-		this.values = values;
+	public void setStartUser(String startUser) {
+		this.startUser = startUser;
 	}
+
+	
 
 }

@@ -3,7 +3,7 @@
  */
 package com.example.tactictoe.unitest;
 
-import junit.framework.TestCase;
+import android.test.AndroidTestCase;
 
 import com.example.tactictoe.Gamer;
 
@@ -11,10 +11,7 @@ import com.example.tactictoe.Gamer;
  * @author quynhlt
  * 
  */
-public class GameUltilTest extends TestCase {
-
-	private static final int X_WIN = 1;
-	private static final int Y_WIN = 2;
+public class GameUltilTest extends AndroidTestCase {
 
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -22,21 +19,28 @@ public class GameUltilTest extends TestCase {
 
 	public void testEndGameWithXIsWinner() {
 		Gamer gamer = new Gamer();
-		String[] values = { "X", "O", "X", "O", "X" };
 		int[] moves = { 0, 3, 1, 4, 2 };
-		gamer.setValues(values);
 		gamer.setMoves(moves);
+		gamer.setStartUser(GameUltil.X);
 		int result = GameUltil.checkResult(gamer);
-		assertTrue(result == X_WIN);
+		assertTrue(result == GameUltil.X_WIN);
 	}
 
-	public void testEndGameWithYIsWinner() {
+	public void testEndGameWithOIsWinner() {
 		Gamer gamer = new Gamer();
-		String[] values = { "O", "X", "O", "X", "O" };
 		int[] moves = { 0, 3, 1, 4, 2 };
-		gamer.setValues(values);
+		gamer.setStartUser(GameUltil.O);
 		gamer.setMoves(moves);
 		int result = GameUltil.checkResult(gamer);
-		assertTrue(result == Y_WIN);
+		assertTrue(result == GameUltil.O_WIN);
+	}
+
+	public void testEndGameIsDraw() {
+		Gamer gamer = new Gamer();
+		int[] moves = { 0, 1, 3, 4, 2 };
+		gamer.setStartUser(GameUltil.O);
+		gamer.setMoves(moves);
+		int result = GameUltil.checkResult(gamer);
+		assertTrue(result == GameUltil.DRAW);
 	}
 }
